@@ -96,6 +96,10 @@ end
 
 wordlist = Wordlist.from_file(ARGV[0], 'common_bucket_prefixes.txt')
 
+File.open("out.txt", "w") do |f|     
+  f.write(wordlist)   
+end
+
 puts "Generated wordlist from file, #{wordlist.length} items..."
 
 Scanner.new(wordlist).scan
